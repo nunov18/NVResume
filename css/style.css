@@ -82,6 +82,11 @@ h5 {
 
 }
 
+.major{
+  font-size: 22px;
+  line-height: 26px;
+}
+
 p {
   font-size: 18px;
   color: #333;
@@ -210,12 +215,10 @@ span {
     display:inline-block;
   }
   .date-text{
-    padding-bottom: 5px;
-    line-height: 1.25em;
+    line-height: 1.33em;
   }
   .location-text{
-    padding-bottom: 15px;
-    line-height: 1.25em;
+    line-height: 1.33em;
   }
   .education-entry{
     padding-bottom: 15px;
