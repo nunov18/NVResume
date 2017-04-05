@@ -27,20 +27,20 @@ var education = {
         "degree": "Masters",
         "majors": ["Services Engineering and Management"],
         "dates": "2015-2017",
-        "url": "http://www.feup.pt"
+        "url": "https://sigarra.up.pt/feup/en/CUR_GERAL.CUR_VIEW?pv_ano_lectivo=2016&pv_origem=CUR&pv_tipo_cur_sigla=M&pv_curso_id=727"
     }, {
         "name": "University Institute of Maia – ISMAI",
         "location": "Avenue Carlos Oliveira Campos, 4475-690 Maia, Portugal",
         "degree": "Bachelor's degree",
         "majors": ["Bussiness Management"],
         "dates": "2012-2015",
-        "url": "http://www.ismai.pt"
+        "url": "http://www.ismai.pt/pt/ensino/oferta-formativa/licenciaturas/gestao-de-empresas"
     }],
     "onlineCourses": [{
         "title": "Front-End Developer",
         "school": "Udacity",
         "dates": "2017",
-        "url": "https://www.udacity.com/"
+        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
     }]
 };
 
@@ -50,6 +50,7 @@ var work = {
         "employer": "Tranquilidade",
         "title": "Operations Manager",
         "dates": "2016",
+        "url": "https://www.tranquilidade.pt/pt",
         "location": "Tranquilidade, Porto ,Portugal",
         "description": "Support the reviewing process of the production of the customer database, ensuring ongoing adherence to the quality and service level and coordinating clearance initiatives and enrichment of strategic customer database.\n Correction of commissions assigned to Commercial Directions and major clients.\n Treatment and response to requests for clarification from Official Entities and Government Entities.\n Responsible for the exchange of mediation between the company and the respective mediators,contributing to the exchange of approximately 4,000 processes over a period of three monthswhich corresponds to an increase in productivity by about 60%."
     }]
@@ -59,6 +60,7 @@ var projects = {
     "projects": [{
         "title": "Organizing Committee of \"IX Congresso de Engenharia de Serviços e Gestão\"",
         "dates": "2016",
+        "url": "https://paginas.fe.up.pt/~cesg/",
         "description": "Faculty of Engineering of University of Porto,Porto(Portugal)\n The IX Congress had as its principal topic Entrepreneurship in Services.",
         "images": [
             "images/cesg.jpg", "images/FEUP.png"
@@ -104,7 +106,7 @@ bio.display = function() {
 work.display = function() {
     for (i = 0; i < work.jobs.length; i++) {
         $("#workExperience").append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer).replace("%url%", work.jobs[i].url);
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
@@ -119,7 +121,7 @@ work.display = function() {
 projects.display = function() {
     for (i = 0; i < projects.projects.length; i++) {
         $("#projects").append(HTMLprojectStart);
-        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("%url%", projects.projects[i].url);;
         var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
         var formattedDescriptions = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
         $(".project-entry:last").append(formattedTitle, formattedDates, formattedDescriptions);
@@ -134,7 +136,7 @@ projects.display = function() {
 education.display = function() {
     for (var i = 0; i < education.schools.length; i++) {
         $("#education").append(HTMLschoolStart);
-        var formattedName = HTMLschoolName.replace("%data%", education.schools[i].name);
+        var formattedName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("%url%", education.schools[i].url);
         var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
         var formattedNameDegree = formattedName + formattedDegree;
         $(".education-entry:last").append(formattedNameDegree);
@@ -146,13 +148,13 @@ education.display = function() {
     $("#education").append(HTMLonlineClasses);
     for (i = 0; i < education.onlineCourses.length; i++) {
         $("#education").append(HTMLschoolStart);
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("%url%", education.onlineCourses[i].url);
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
         var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
         $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
 
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
-        var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+        var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[i].school).replace("%url%", education.onlineCourses[i].url);
         $(".education-entry:last").append(formattedOnlineDates, formattedOnlineUrl);
     }
 };
