@@ -163,7 +163,7 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
-  display: none;
+  display: inline;
 }
 
 img {
@@ -199,11 +199,24 @@ span {
     margin-top: 10%;
   }
   .biopic {
-    width: 150px;
+    width: 130px;
   }
   .welcome-message {
     display: none;
   }
+  span{
+    display:inline-block;
+  }
+  .date-text{
+    padding-bottom: 5px;
+  }
+  .location-text{
+    padding-bottom: 15px;
+  }
+  .education-entry{
+    padding-bottom: 15px;
+  }
+
 }
 
 #map {

@@ -86,13 +86,12 @@ bio.display = function() {
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 
     //Top contatcs
-    $("#topContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail, formattedMobile);
+    $("#topContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail);
 
     //Footer contatcs
-    $("#footerContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail, formattedMobile);
+    $("#footerContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail);
 
     // bio skills
     $("#header").append(HTMLskillsStart);
