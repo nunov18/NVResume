@@ -9,7 +9,7 @@ var bio = {
         "mobile": "+351 915012837",
         "email": "nunov18@gmail.com",
         "github": "nunov18",
-        "twitter": "@nunovieirapt",
+        "linkdin": "linkedin.com/in/nunovieirapt",
         "location": "Porto, Portugal"
     },
     "welcomeMessage": "Hello World, Welcome!",
@@ -83,15 +83,15 @@ bio.display = function() {
     $("#header").append(formattedMessage);
 
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedLinkdin = HTMLlinkdin.replace("%data%", bio.contacts.linkdin);
     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 
     //Top contatcs
-    $("#topContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail);
+    $("#topContacts").prepend(formattedLocation, formattedLinkdin, formattedGitHub, formattedEmail);
 
     //Footer contatcs
-    $("#footerContacts").prepend(formattedLocation, formattedTwitter, formattedGitHub, formattedEmail);
+    $("#footerContacts").prepend(formattedLocation, formattedLinkdin, formattedGitHub, formattedEmail);
 
     // bio skills
     $("#header").append(HTMLskillsStart);
